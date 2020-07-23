@@ -1,0 +1,29 @@
+
+<head>
+    <link rel="stylesheet" href="/path/to/openplayer.css">
+    
+</head>
+<body>
+    <video class="op-player__media" id="video" controls playsinline>
+        <source src="Sintel_master.m3u8">
+    </video>
+    <script>
+        const player = new OpenPlayer('video', null, false, {
+  controls: {
+    left: ['play', 'time', 'volume'],
+    middle: ['progress'],
+    right: ['settings', 'levels', 'fullscreen']
+  },
+  hls: {
+    startLevel: 1,
+    enableWorker: true,
+    widevineLicenseUrl: 'https://cwip-shaka-proxy.appspot.com/no_auth',
+    emeEnabled: true,
+  }
+});
+player.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/openplayerjs@latest/dist/openplayer.min.js"></script>
+</body>
+
+
